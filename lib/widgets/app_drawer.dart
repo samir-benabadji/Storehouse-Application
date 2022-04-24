@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 
 import '../providers/auth.dart';
 import '../helpers/custom_route.dart';
+import '../screens/user_products_screen.dart';
 
 class AppDrawer extends StatelessWidget {
   @override
@@ -32,7 +33,10 @@ class AppDrawer extends StatelessWidget {
           ListTile(
             leading: Icon(Icons.edit),
             title: Text('Manage Products'),
-            onTap: () {},
+            onTap: () {
+              Navigator.of(context)
+                  .pushReplacementNamed(UserProductsScreen.routeName);
+            },
           ),
           Divider(),
           ListTile(
