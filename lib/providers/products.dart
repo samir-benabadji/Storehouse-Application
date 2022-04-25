@@ -125,7 +125,7 @@ class Products with ChangeNotifier {
     final url =
         'https://storehouseapplicationmp-default-rtdb.europe-west1.firebasedatabase.app/products/$id.json?auth=$authToken';
     final existingProductIndex = _items.indexWhere((prod) => prod.id == id);
-    Product existingProduct = _items[existingProductIndex];
+    var existingProduct = _items[existingProductIndex];
     _items.removeAt(existingProductIndex);
     notifyListeners();
     final response = await http.delete(url);
