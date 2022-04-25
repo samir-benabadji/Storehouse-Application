@@ -10,24 +10,57 @@ class AppDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
+      backgroundColor: Colors.black38,
       child: Column(
         children: <Widget>[
           AppBar(
-            title: Text('Drawer Menu'),
+            title: Text(
+              'Drawer Menu',
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                color: Theme.of(context).accentColor,
+                fontSize: 25,
+              ),
+            ),
             automaticallyImplyLeading: false,
           ),
-          Divider(),
+          Divider(
+            color: Theme.of(context).primaryColor,
+            thickness: 3,
+          ),
           ListTile(
-            leading: Icon(Icons.shop),
-            title: Text('Shop'),
+            leading: Icon(
+              Icons.shop,
+              color: Theme.of(context).accentColor,
+            ),
+            title: Text(
+              'Shop',
+              style: TextStyle(
+                color: Theme.of(context).accentColor,
+                fontSize: 20,
+              ),
+            ),
             onTap: () {
               Navigator.of(context).pushReplacementNamed('/');
             },
           ),
-          Divider(),
+          Divider(
+            color: Theme.of(context).primaryColor,
+            thickness: 3,
+          ),
           ListTile(
-            leading: Icon(Icons.payment),
-            title: Text('Orders'),
+            leading: Icon(
+              Icons.payment,
+              color: Theme.of(context).accentColor,
+            ),
+            title: Text(
+              'Orders',
+              style: TextStyle(
+                color: Theme.of(context).accentColor,
+                fontSize: 20,
+              ),
+            ),
             onTap: () {
               Navigator.of(context)
                   .pushReplacementNamed(OrdersScreen.routeName);
@@ -38,19 +71,43 @@ class AppDrawer extends StatelessWidget {
               // );
             },
           ),
-          Divider(),
+          Divider(
+            color: Theme.of(context).primaryColor,
+            thickness: 3,
+          ),
           ListTile(
-            leading: Icon(Icons.edit),
-            title: Text('Manage Products'),
+            leading: Icon(
+              Icons.edit,
+              color: Theme.of(context).accentColor,
+            ),
+            title: Text(
+              'Manage Products',
+              style: TextStyle(
+                color: Theme.of(context).accentColor,
+                fontSize: 20,
+              ),
+            ),
             onTap: () {
               Navigator.of(context)
                   .pushReplacementNamed(UserProductsScreen.routeName);
             },
           ),
-          Divider(),
+          Divider(
+            color: Theme.of(context).primaryColor,
+            thickness: 3,
+          ),
           ListTile(
-            leading: Icon(Icons.exit_to_app),
-            title: Text('Logout'),
+            leading: Icon(
+              Icons.exit_to_app,
+              color: Theme.of(context).accentColor,
+            ),
+            title: Text(
+              'Logout',
+              style: TextStyle(
+                color: Theme.of(context).accentColor,
+                fontSize: 20,
+              ),
+            ),
             onTap: () {
               Navigator.of(context).pop();
               Navigator.of(context).pushReplacementNamed('/');
@@ -59,6 +116,10 @@ class AppDrawer extends StatelessWidget {
               //     .pushReplacementNamed(UserProductsScreen.routeName);
               Provider.of<Auth>(context, listen: false).logout();
             },
+          ),
+          Divider(
+            color: Theme.of(context).primaryColor,
+            thickness: 3,
           ),
         ],
       ),

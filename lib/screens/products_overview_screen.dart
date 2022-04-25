@@ -53,7 +53,16 @@ class _ProductsOverviewScreenState extends State<ProductsOverviewScreen> {
     return Scaffold(
       backgroundColor: Colors.black,
       appBar: AppBar(
-        title: Text('Storehouse'),
+        iconTheme: IconThemeData(
+          color: Theme.of(context).accentColor,
+        ),
+        title: Text(
+          'Storehouse',
+          style: TextStyle(
+            color: Theme.of(context).accentColor,
+            fontSize: 22.5,
+          ),
+        ),
         actions: <Widget>[
           PopupMenuButton(
             onSelected: (FilterOptions selectedValue) {
@@ -67,6 +76,8 @@ class _ProductsOverviewScreenState extends State<ProductsOverviewScreen> {
             },
             icon: Icon(
               Icons.more_vert,
+              color: Theme.of(context).accentColor,
+              size: 30,
             ),
             itemBuilder: (_) => [
               PopupMenuItem(
@@ -87,6 +98,8 @@ class _ProductsOverviewScreenState extends State<ProductsOverviewScreen> {
             child: IconButton(
               icon: Icon(
                 Icons.shopping_cart,
+                color: Theme.of(context).accentColor,
+                size: 30,
               ),
               onPressed: () {
                 Navigator.of(context).pushNamed(CartScreen.routeName);

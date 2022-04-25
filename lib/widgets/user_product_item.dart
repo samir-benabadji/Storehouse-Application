@@ -15,16 +15,29 @@ class UserProductItem extends StatelessWidget {
   Widget build(BuildContext context) {
     final scaffold = Scaffold.of(context);
     return ListTile(
-      title: Text(title),
-      leading: CircleAvatar(
-        backgroundImage: NetworkImage(imageUrl),
+      title: Text(
+        title,
+        style: TextStyle(color: Theme.of(context).accentColor, fontSize: 20),
+      ),
+      leading: Container(
+        decoration: BoxDecoration(
+            shape: BoxShape.circle,
+            border:
+                Border.all(color: Theme.of(context).primaryColor, width: 2)),
+        child: CircleAvatar(
+          backgroundImage: NetworkImage(imageUrl),
+        ),
       ),
       trailing: Container(
         width: 100,
         child: Row(
           children: <Widget>[
             IconButton(
-              icon: Icon(Icons.edit),
+              icon: Icon(
+                Icons.edit,
+                size: 25,
+                color: Theme.of(context).primaryColor,
+              ),
               onPressed: () {
                 Navigator.of(context)
                     .pushNamed(EditProductScreen.routeName, arguments: id);
@@ -32,7 +45,10 @@ class UserProductItem extends StatelessWidget {
               color: Theme.of(context).primaryColor,
             ),
             IconButton(
-              icon: Icon(Icons.delete),
+              icon: Icon(
+                Icons.delete,
+                size: 25,
+              ),
               onPressed: () async {
                 try {
                   await Provider.of<Products>(context, listen: false)
@@ -40,7 +56,10 @@ class UserProductItem extends StatelessWidget {
                 } catch (error) {
                   scaffold.showSnackBar(
                     SnackBar(
-                      content: Text('Deleting failed!', textAlign: TextAlign.center,),
+                      content: Text(
+                        'Deleting failed!',
+                        textAlign: TextAlign.center,
+                      ),
                     ),
                   );
                 }
