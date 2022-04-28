@@ -50,7 +50,7 @@ class MyApp extends StatelessWidget {
           title: 'Storehouse Application',
           theme: ThemeData(
             primarySwatch: Palette.kToGreen,
-            accentColor: Colors.indigo,
+            accentColor: Colors.lightBlue,
             fontFamily: 'Lato',
             pageTransitionsTheme: PageTransitionsTheme(
               builders: {

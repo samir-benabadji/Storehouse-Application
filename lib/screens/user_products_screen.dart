@@ -24,15 +24,15 @@ class UserProductsScreen extends StatelessWidget {
         iconTheme: IconThemeData(
           color: Theme.of(context).accentColor,
         ),
-        title: const Text(
+        title: Text(
           'Your Products',
-          style: TextStyle(color: Colors.indigo),
+          style: TextStyle(color: Theme.of(context).accentColor),
         ),
         actions: <Widget>[
           IconButton(
-            icon: const Icon(
+            icon: Icon(
               Icons.add,
-              color: Colors.indigo,
+              color: Theme.of(context).accentColor,
             ),
             onPressed: () {
               Navigator.of(context).pushNamed(EditProductScreen.routeName);

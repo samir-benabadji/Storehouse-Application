@@ -221,8 +221,13 @@ class _AuthCardState extends State<AuthCard>
                 TextFormField(
                   style: TextStyle(color: Colors.white),
                   decoration: InputDecoration(
+                      enabledBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(
+                            color: Theme.of(context).accentColor, width: 1.5),
+                      ),
                       labelText: 'E-Mail',
-                      labelStyle: TextStyle(color: Colors.grey)),
+                      labelStyle:
+                          TextStyle(color: Theme.of(context).accentColor)),
                   keyboardType: TextInputType.emailAddress,
                   validator: (value) {
                     if (value.isEmpty || !value.contains('@')) {
@@ -236,8 +241,13 @@ class _AuthCardState extends State<AuthCard>
                 TextFormField(
                   style: TextStyle(color: Colors.white),
                   decoration: InputDecoration(
+                      enabledBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(
+                            color: Theme.of(context).accentColor, width: 1.5),
+                      ),
                       labelText: 'Password',
-                      labelStyle: TextStyle(color: Colors.grey)),
+                      labelStyle:
+                          TextStyle(color: Theme.of(context).accentColor)),
                   obscureText: true,
                   controller: _passwordController,
                   validator: (value) {
@@ -264,8 +274,14 @@ class _AuthCardState extends State<AuthCard>
                         style: TextStyle(color: Colors.white),
                         enabled: _authMode == AuthMode.Signup,
                         decoration: InputDecoration(
+                            enabledBorder: UnderlineInputBorder(
+                              borderSide: BorderSide(
+                                  color: Theme.of(context).accentColor,
+                                  width: 1.5),
+                            ),
                             labelText: 'Confirm Password',
-                            labelStyle: TextStyle(color: Colors.grey)),
+                            labelStyle: TextStyle(
+                                color: Theme.of(context).accentColor)),
                         obscureText: true,
                         validator: _authMode == AuthMode.Signup
                             ? (value) {
@@ -285,8 +301,10 @@ class _AuthCardState extends State<AuthCard>
                   CircularProgressIndicator()
                 else
                   RaisedButton(
-                    child:
-                        Text(_authMode == AuthMode.Login ? 'LOGIN' : 'SIGN UP'),
+                    child: Text(
+                      _authMode == AuthMode.Login ? 'LOGIN' : 'SIGN UP',
+                      style: TextStyle(color: Theme.of(context).accentColor),
+                    ),
                     onPressed: _submit,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(30),
@@ -299,7 +317,7 @@ class _AuthCardState extends State<AuthCard>
                 FlatButton(
                   child: Text(
                     '${_authMode == AuthMode.Login ? 'SIGNUP' : 'LOGIN'} INSTEAD',
-                    style: TextStyle(color: Colors.white),
+                    style: TextStyle(color: Theme.of(context).accentColor),
                   ),
                   onPressed: _switchAuthMode,
                   padding: EdgeInsets.symmetric(horizontal: 30.0, vertical: 4),

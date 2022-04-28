@@ -103,17 +103,17 @@ class _EditProductScreenState extends State<EditProductScreen> {
         await showDialog(
           context: context,
           builder: (ctx) => AlertDialog(
-                title: Text('An error occurred!'),
-                content: Text('Something went wrong.'),
-                actions: <Widget>[
-                  FlatButton(
-                    child: Text('Okay'),
-                    onPressed: () {
-                      Navigator.of(ctx).pop();
-                    },
-                  )
-                ],
-              ),
+            title: Text('An error occurred!'),
+            content: Text('Something went wrong.'),
+            actions: <Widget>[
+              FlatButton(
+                child: Text('Okay'),
+                onPressed: () {
+                  Navigator.of(ctx).pop();
+                },
+              )
+            ],
+          ),
         );
       }
       // finally {
@@ -133,11 +133,23 @@ class _EditProductScreenState extends State<EditProductScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.black,
       appBar: AppBar(
-        title: Text('Edit Product'),
+        iconTheme: IconThemeData(
+          color: Theme.of(context).accentColor,
+        ),
+        title: Text(
+          'Edit Product',
+          style: TextStyle(
+            color: Theme.of(context).accentColor,
+          ),
+        ),
         actions: <Widget>[
           IconButton(
-            icon: Icon(Icons.save),
+            icon: Icon(
+              Icons.save,
+              color: Theme.of(context).accentColor,
+            ),
             onPressed: _saveForm,
           ),
         ],
@@ -154,7 +166,17 @@ class _EditProductScreenState extends State<EditProductScreen> {
                   children: <Widget>[
                     TextFormField(
                       initialValue: _initValues['title'],
-                      decoration: InputDecoration(labelText: 'Title'),
+                      decoration: InputDecoration(
+                        enabledBorder: UnderlineInputBorder(
+                          borderSide: BorderSide(
+                              color: Theme.of(context).primaryColor,
+                              width: 1.5),
+                        ),
+                        labelText: 'Title',
+                        labelStyle: TextStyle(
+                          color: Theme.of(context).accentColor,
+                        ),
+                      ),
                       textInputAction: TextInputAction.next,
                       onFieldSubmitted: (_) {
                         FocusScope.of(context).requestFocus(_priceFocusNode);
@@ -177,7 +199,17 @@ class _EditProductScreenState extends State<EditProductScreen> {
                     ),
                     TextFormField(
                       initialValue: _initValues['price'],
-                      decoration: InputDecoration(labelText: 'Price'),
+                      decoration: InputDecoration(
+                        enabledBorder: UnderlineInputBorder(
+                          borderSide: BorderSide(
+                              color: Theme.of(context).primaryColor,
+                              width: 1.5),
+                        ),
+                        labelText: 'Price',
+                        labelStyle: TextStyle(
+                          color: Theme.of(context).accentColor,
+                        ),
+                      ),
                       textInputAction: TextInputAction.next,
                       keyboardType: TextInputType.number,
                       focusNode: _priceFocusNode,
@@ -209,7 +241,17 @@ class _EditProductScreenState extends State<EditProductScreen> {
                     ),
                     TextFormField(
                       initialValue: _initValues['description'],
-                      decoration: InputDecoration(labelText: 'Description'),
+                      decoration: InputDecoration(
+                        enabledBorder: UnderlineInputBorder(
+                          borderSide: BorderSide(
+                              color: Theme.of(context).primaryColor,
+                              width: 1.5),
+                        ),
+                        labelText: 'Description',
+                        labelStyle: TextStyle(
+                          color: Theme.of(context).accentColor,
+                        ),
+                      ),
                       maxLines: 3,
                       keyboardType: TextInputType.multiline,
                       focusNode: _descriptionFocusNode,
@@ -237,6 +279,7 @@ class _EditProductScreenState extends State<EditProductScreen> {
                       crossAxisAlignment: CrossAxisAlignment.end,
                       children: <Widget>[
                         Container(
+                          alignment: Alignment.center,
                           width: 100,
                           height: 100,
                           margin: EdgeInsets.only(
@@ -246,11 +289,17 @@ class _EditProductScreenState extends State<EditProductScreen> {
                           decoration: BoxDecoration(
                             border: Border.all(
                               width: 1,
-                              color: Colors.grey,
+                              color: Theme.of(context).primaryColor,
                             ),
                           ),
                           child: _imageUrlController.text.isEmpty
-                              ? Text('Enter a URL')
+                              ? Text(
+                                  'Enter a URL',
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    color: Theme.of(context).accentColor,
+                                  ),
+                                )
                               : FittedBox(
                                   child: Image.network(
                                     _imageUrlController.text,
@@ -260,7 +309,17 @@ class _EditProductScreenState extends State<EditProductScreen> {
                         ),
                         Expanded(
                           child: TextFormField(
-                            decoration: InputDecoration(labelText: 'Image URL'),
+                            decoration: InputDecoration(
+                              enabledBorder: UnderlineInputBorder(
+                                borderSide: BorderSide(
+                                    color: Theme.of(context).primaryColor,
+                                    width: 1.5),
+                              ),
+                              labelText: 'Image URL',
+                              labelStyle: TextStyle(
+                                color: Theme.of(context).accentColor,
+                              ),
+                            ),
                             keyboardType: TextInputType.url,
                             textInputAction: TextInputAction.done,
                             controller: _imageUrlController,

@@ -17,7 +17,7 @@ class UserProductItem extends StatelessWidget {
     return ListTile(
       title: Text(
         title,
-        style: TextStyle(color: Theme.of(context).accentColor, fontSize: 20),
+        style: TextStyle(color: Colors.indigo, fontSize: 20),
       ),
       leading: Container(
         decoration: BoxDecoration(
@@ -36,7 +36,7 @@ class UserProductItem extends StatelessWidget {
               icon: Icon(
                 Icons.edit,
                 size: 25,
-                color: Theme.of(context).primaryColor,
+                color: Colors.indigo,
               ),
               onPressed: () {
                 Navigator.of(context)

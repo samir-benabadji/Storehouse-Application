@@ -56,7 +56,7 @@ class ProductItem extends StatelessWidget {
                 icon: Icon(
                   product.isFavorite ? Icons.favorite : Icons.favorite_border,
                 ),
-                color: Theme.of(context).accentColor,
+                color: Colors.indigo,
                 onPressed: () {
                   product.toggleFavoriteStatus(
                     authData.token,
@@ -67,14 +67,14 @@ class ProductItem extends StatelessWidget {
             ),
             title: Text(
               product.title,
-              style: TextStyle(
-                  color: Theme.of(context).accentColor,
-                  fontWeight: FontWeight.bold),
+              style:
+                  TextStyle(color: Colors.indigo, fontWeight: FontWeight.bold),
               textAlign: TextAlign.center,
             ),
             trailing: IconButton(
               icon: Icon(
                 Icons.shopping_cart,
+                color: Colors.indigo,
               ),
               onPressed: () {
                 cart.addItem(product.id, product.price, product.title);

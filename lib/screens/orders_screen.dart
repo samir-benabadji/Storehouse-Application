@@ -13,8 +13,13 @@ class OrdersScreen extends StatelessWidget {
     print('building orders');
     // final orderData = Provider.of<Orders>(context);
     return Scaffold(
+      backgroundColor: Colors.black,
       appBar: AppBar(
-        title: Text('Your Orders'),
+        iconTheme: IconThemeData(color: Theme.of(context).accentColor),
+        title: Text(
+          'Your Orders',
+          style: TextStyle(color: Theme.of(context).accentColor),
+        ),
       ),
       drawer: AppDrawer(),
       body: FutureBuilder(
@@ -32,9 +37,9 @@ class OrdersScreen extends StatelessWidget {
             } else {
               return Consumer<Orders>(
                 builder: (ctx, orderData, child) => ListView.builder(
-                      itemCount: orderData.orders.length,
-                      itemBuilder: (ctx, i) => OrderItem(orderData.orders[i]),
-                    ),
+                  itemCount: orderData.orders.length,
+                  itemBuilder: (ctx, i) => OrderItem(orderData.orders[i]),
+                ),
               );
             }
           }
