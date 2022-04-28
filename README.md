@@ -1,5 +1,6 @@
 # Storehouse-Application
 A Storehouse that contains different products and items
 
-![Screenshots](assets/images/P2.png) 
-
+| Page Overview | Signup & Signin |
+|--|--|
+| ![Home](assets\images\P2.png) | ![Job Menu](assets\images\P3.png) |
