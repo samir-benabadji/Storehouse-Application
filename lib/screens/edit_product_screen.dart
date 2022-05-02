@@ -165,6 +165,7 @@ class _EditProductScreenState extends State<EditProductScreen> {
                 child: ListView(
                   children: <Widget>[
                     TextFormField(
+                      style: TextStyle(color: Theme.of(context).accentColor),
                       initialValue: _initValues['title'],
                       decoration: InputDecoration(
                         enabledBorder: UnderlineInputBorder(
@@ -198,6 +199,7 @@ class _EditProductScreenState extends State<EditProductScreen> {
                       },
                     ),
                     TextFormField(
+                      style: TextStyle(color: Theme.of(context).accentColor),
                       initialValue: _initValues['price'],
                       decoration: InputDecoration(
                         enabledBorder: UnderlineInputBorder(
@@ -240,6 +242,7 @@ class _EditProductScreenState extends State<EditProductScreen> {
                       },
                     ),
                     TextFormField(
+                      style: TextStyle(color: Theme.of(context).accentColor),
                       initialValue: _initValues['description'],
                       decoration: InputDecoration(
                         enabledBorder: UnderlineInputBorder(
@@ -309,6 +312,8 @@ class _EditProductScreenState extends State<EditProductScreen> {
                         ),
                         Expanded(
                           child: TextFormField(
+                            style:
+                                TextStyle(color: Theme.of(context).accentColor),
                             decoration: InputDecoration(
                               enabledBorder: UnderlineInputBorder(
                                 borderSide: BorderSide(
