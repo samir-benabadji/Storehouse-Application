@@ -1,5 +1,5 @@
 # Storehouse-Application
-A Storehouse that contains different products and items
+Fully functional Storehouse application for a local client with firebase as back end
 
 | Page Overview | Signup & Signin |
 |--|--|

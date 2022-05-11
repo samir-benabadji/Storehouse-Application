@@ -1,5 +1,5 @@
 name: storehouseapplicationmpgd
-description: A Storehouse that contains different products and items
+description: Fully functional Storehouse application for a local client with firebase as back end
 
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
